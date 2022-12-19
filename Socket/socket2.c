@@ -59,7 +59,7 @@ if (bind(fd, (struct sockaddr*)&addr, sizeof(addr)) == -1)
 			int check = read(cl, buf, sizeof(buf));
             in++;
 			if(check == -1) {	
-				perror("Error in reading from pipe1_kg");
+				perror("Error in reading from sock_kg");
 				exit(0);
 			}
             curr=buf[0];
