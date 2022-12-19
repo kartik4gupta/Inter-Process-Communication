@@ -87,7 +87,7 @@ if (connect(fd, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
   
    while(!flag){
         if(fd == -1) {
-			perror("Couldn't access pipeA1_kg");
+			perror("Couldn't access sock_kg");
 		}
 
 		printf("Currently sending Strings Indexed from %d - %d\n", Ind_Last, Ind_Last + 4);
