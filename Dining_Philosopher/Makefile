@@ -1,7 +1,9 @@
-all: DiningPhilosopher 
+all: A1 
 
-DiningPhilosopher: DiningPhilosopher.c
-  gcc DiningPhilosopher.c -o DiningPhilosopher
+A1: A1.c
+  gcc A1.c -o A1
+A2: A2.c
+  gcc A2.c -o A2
 
 clean: 
-  rm DiningPhilosopher
+  rm A1 A2
