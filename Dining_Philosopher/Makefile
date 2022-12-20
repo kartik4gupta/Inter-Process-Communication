@@ -1,4 +1,4 @@
-all: A1 
+all: A1 A2
 
 A1: A1.c
   gcc A1.c -o A1
