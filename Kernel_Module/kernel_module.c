@@ -14,7 +14,7 @@ MODULE_PARM_DESC(process_name, "The name of the process ");
 
 static int __init process_info_init(void)
 {
-    if (process == NULL) {
+    if (process_name == NULL) {
         return -1;
     }
 
