@@ -75,7 +75,7 @@ int main()
 
     key_t key, key2;
     char *shm, *s;
-    key = ftok("Prog1.c", 65);
+    key = ftok("S1.c", 65);
     if (key == -1)
     {
         perror("ftok");
