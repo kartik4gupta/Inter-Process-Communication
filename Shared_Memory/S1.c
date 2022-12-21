@@ -7,6 +7,10 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
+#include <math.h>
+#include <sys/time.h>
+#include <time.h>
+
 
 void sub_time(struct timespec st, struct timespec fn, struct timespec *gap)
 {
