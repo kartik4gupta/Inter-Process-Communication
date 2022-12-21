@@ -5,6 +5,6 @@ program FIFO2 accepts the received strings, and sends back the highest ID receiv
 acknowledge the strings received. The program P2 simply prints the ID’s and the strings on the console.
 On receiving the acknowledged packet, FIFO1 sends the next five strings, with the string elements starting
 from the successor of the acknowledged ID. Function sub_time is used to find the time taki=en by the process
-in (seconds.nano_seconds) format. Came out to be 168.456047000.
+in (seconds.nano_seconds) format.
 
 The above mechanism has been implemented using FIFOs.
