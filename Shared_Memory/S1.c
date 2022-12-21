@@ -8,6 +8,26 @@
 #include <string.h>
 #include <errno.h>
 
+void sub_time(struct timespec st, struct timespec fn, struct timespec *gap)
+{
+
+    time_t secs;
+    long nsecs;
+    secs = fn.tv_sec - st.tv_sec;
+    nsecs = fn.tv_nsec - st.tv_nsec;
+    if (nsecs < 0){
+        nsecs = nsecs + 1000000000;
+        secs=secs-1;
+    }
+    gap->tv_sec=secs;
+    gap->tv_nsec=nsecs;
+}
+
+struct timespec st, fn, gap;
+
+
+
+
 int main()
 {
     srand(time(0));
@@ -70,7 +90,7 @@ int main()
         perror("shmat");
         exit(1);
     }
-
+    clock_gettime(CLOCK_REALTIME, &st);
     int Ind_last = 1;
     int curr = Ind_last;
     for (int u = 1; u <= 10; u++)
@@ -104,6 +124,9 @@ int main()
         }
         printf("Highest index received : %d\n", Ind_last - 1);
     }
+    clock_gettime(CLOCK_REALTIME, &fn);
+    sub_time(st, fn, &gap);
+    printf("Time taken: %ld.%09ld\n", gap.tv_sec, gap.tv_nsec);
 
     return 0;
 }
